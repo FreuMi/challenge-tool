@@ -1,0 +1,26 @@
+@base <http://ex.com/> .
+@prefix ex: <http://example.com/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+
+<#TriplesMap1> a rr:TriplesMap ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/data1.csv" ] ;
+    rr:predicateObjectMap [ a rr:PredicateObjectMap ;
+            rr:objectMap [ a rr:ReferenceObjectMap ;
+                    rr:joinCondition [ a rr:JoinCondition ;
+                            rr:child "p1" ;
+                            rr:parent "p1" ] ;
+                    rr:parentTriplesMap <#TriplesMap2> ] ;
+            rr:predicateMap [ a rr:PredicateMap ;
+                    rr:constant ex:j1 ] ] ;
+    rr:subjectMap [ rr:template "http://ex.com/table1/{id}" ] .
+
+<#TriplesMap2> a rr:TriplesMap ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/data2.csv" ] ;
+    rr:subjectMap [ rr:template "http://ex.com/table2/{id}" ] .
+

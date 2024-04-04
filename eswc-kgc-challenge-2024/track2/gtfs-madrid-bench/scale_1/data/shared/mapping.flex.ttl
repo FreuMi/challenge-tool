@@ -1,0 +1,1300 @@
+@base <http://mapping.example.com/> .
+@prefix ns1: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+
+<map_feed_0> a rr:TriplesMap ;
+    rdfs:label "feed" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/FEED_INFO.csv" ] ;
+    rr:predicateObjectMap <uuid/00a44410-0945-424a-9e15-5af7cf257066>,
+        <uuid/094ead76-3af2-4155-8f95-fc88f9ccaff9>,
+        <uuid/0ea3c7f3-6fdf-40ea-9c67-f8096a27e7f0>,
+        <uuid/147117e2-a64b-4817-9ff8-4ea732d61328>,
+        <uuid/1e063c06-29e3-40e6-937a-626d4c215be2>,
+        <uuid/65f85772-0c63-4129-9f6b-0ca60cf39de9>,
+        <uuid/ab281f76-867d-4d56-8112-ba4b4627b024> ;
+    rr:subjectMap <uuid/cce32621-264c-4513-b641-8366d5f1647c> .
+
+<map_frequencies_0> a rr:TriplesMap ;
+    rdfs:label "frequencies" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/FREQUENCIES.csv" ] ;
+    rr:predicateObjectMap <uuid/2ec102d9-2197-45ab-8605-6ce4cd1fd75a>,
+        <uuid/5f528244-2424-4be1-b45b-77a45a69dc9d>,
+        <uuid/79d9a098-fd08-4ee6-8e27-cbea33b3f35b>,
+        <uuid/ac216b60-4229-4f96-87ab-1ab4f6507442>,
+        <uuid/b7488923-9d32-4027-a649-113ee01df4b3>,
+        <uuid/ed3879d7-b3d4-48d5-a48b-2d1f0a77cc29> ;
+    rr:subjectMap <uuid/17fb4bcd-693d-45dd-99eb-168620c814ef> .
+
+<map_stoptimes_0> a rr:TriplesMap ;
+    rdfs:label "stoptimes" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/STOP_TIMES.csv" ] ;
+    rr:predicateObjectMap <uuid/0eee4635-6e04-41a9-bf33-d5e749fd3690>,
+        <uuid/1076d4c0-e677-4227-9a90-2901715c294f>,
+        <uuid/25f8dfb9-ced7-49b0-91a1-13078be0ee08>,
+        <uuid/3873f511-0b4e-429a-a92c-53675a468117>,
+        <uuid/42aeca04-c55f-461e-8668-d0f51c7845f1>,
+        <uuid/93d1d1c3-1bec-4e17-9c74-c8fc0c99ea05>,
+        <uuid/a2543f89-f20b-40b4-a47d-4908f2ee9298>,
+        <uuid/a9255571-f410-4432-885a-658ff2d27d4e>,
+        <uuid/cd4d6531-c884-43be-a745-41b2a588d48e>,
+        <uuid/ff4bfa6c-a711-40dc-8eb4-d755d9cb192a> ;
+    rr:subjectMap <uuid/1b671390-964b-40a2-a08a-6f9a5a95d083> .
+
+<uuid/0fc1fe16-6edb-4d37-a2f5-033b27905bc6> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/29df2695-d5e7-466a-af89-2badbdae7fe7> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/37bf6438-2219-43ec-98f1-ec333f09d217> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/3b5ae5c3-0ed7-4fb3-ae44-79c772830d1c> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/3bcc4639-f315-413f-8ca8-6d65352a19ef> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/53321190-8a05-456d-a7a0-d3abeaea39d8> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/59afc127-0908-4b27-92c7-8fe18ff8e6e6> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/872b7272-a382-4b24-9c73-fab9d7b4fe1d> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/97e171d4-4b83-40ae-a0c8-64ffb17daa5c> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/b7d43e78-15da-490b-a58d-4aed95480eab> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/d92ac579-c9d0-4881-ad31-d33a3c4efd96> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/e1abed96-7352-4f5e-9316-1ed1c4057afa> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<uuid/e6af5020-b6b4-4c4a-9994-98e568c2e735> a ns1:Database ;
+    ns1:jdbcDSN "jdbc:mysql://localhost:3306/gtfs"^^xsd:string ;
+    ns1:jdbcDriver "com.mysql.cj.jdbc.Driver"^^xsd:string ;
+    ns1:password "oeg"^^xsd:string ;
+    ns1:username "oeg"^^xsd:string .
+
+<map_agency_0> a rr:TriplesMap ;
+    rdfs:label "agency" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/AGENCY.csv" ] ;        
+    rr:predicateObjectMap <uuid/35ecc7eb-9e73-46ca-adf6-5148b6663812>,
+        <uuid/6032a883-a9bd-4931-89d0-7f6803c42880>,
+        <uuid/7aa85a0a-6d11-4824-9639-5e97f0faec8a>,
+        <uuid/823ceb3e-cebd-49c0-8d0c-d8c87849d333>,
+        <uuid/84bf2276-3580-49d4-8220-585a97fd859a>,
+        <uuid/acb9c193-7c69-436b-bcd7-14108f5aef47>,
+        <uuid/fb317007-32a3-4d15-bae0-c1f792a3499a> ;
+    rr:subjectMap <uuid/481fd6d8-1856-4fc6-b867-894f553d7b49> .
+
+<map_calendar_date_rules_0> a rr:TriplesMap ;
+    rdfs:label "calendar_date_rules" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;   
+    rr:predicateObjectMap <uuid/19d00c58-0457-4152-ba8b-ed11180964c2>,
+        <uuid/2dfa4b93-57e1-4758-94d4-99bcbcf69bc6>,
+        <uuid/cd3dd617-24c2-4890-a71c-455d1b728798> ;
+    rr:subjectMap <uuid/2d85fcbf-ba3c-4eeb-a034-5f4a361ba512> .
+
+<map_calendar_rules_0> a rr:TriplesMap ;
+    rdfs:label "calendar_rules" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/CALENDAR.csv" ] ;   
+    rr:predicateObjectMap <uuid/022bc5d5-82f2-45e8-8bdd-76c4f8317898>,
+        <uuid/1ad934f0-02d0-4d54-b9f3-4473d89b872e>,
+        <uuid/426d5e79-9229-48ff-bc4f-b4a3722ace5b>,
+        <uuid/5fd39021-dc80-40c6-9914-78185209f2ca>,
+        <uuid/6828a239-4d90-4360-a44c-e0e7c31ce148>,
+        <uuid/7c76c25e-bf9f-44e2-a45b-91b63fd6422a>,
+        <uuid/a5c20f17-81ed-46ba-ae89-fd39e8e8081c>,
+        <uuid/ba78bea5-d9d7-431a-bd3f-56b084c844b8>,
+        <uuid/bb6651cf-10ce-473c-af9e-465399968db9>,
+        <uuid/c3401e25-9ba0-4c1a-9ecd-4c678e289c0f> ;
+    rr:subjectMap <uuid/56ee4e0b-8f3a-465a-8adb-1ef313775404> .
+
+<map_routes_0> a rr:TriplesMap ;
+    rdfs:label "routes" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/ROUTES.csv" ] ;   
+    rr:predicateObjectMap <uuid/2f3cae5a-e19c-4567-a047-1ea0806d8f04>,
+        <uuid/3dde2f5f-f3b7-43eb-9335-ce6177b880d6>,
+        <uuid/555ca36f-8756-4f84-b0ea-1743a9395746>,
+        <uuid/678c6f8a-3c83-408a-b995-e39790b7fc26>,
+        <uuid/9b96f2f1-3151-4c76-8743-dad8e7355148>,
+        <uuid/bd54108f-492a-4c4d-86f5-b36fbd1b9a56>,
+        <uuid/e53ca919-34a1-48da-8dcc-f245ffc284d3>,
+        <uuid/f2588f74-4b90-4ff2-97be-eb3513b4d47f>,
+        <uuid/fe6d3160-5ffb-4206-bb46-44976d5cdf6e> ;
+    rr:subjectMap <uuid/b876ec06-d089-45e1-9759-2644c556406f> .
+
+<map_services1_0> a rr:TriplesMap ;
+    rdfs:label "services1" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/CALENDAR.csv" ] ;           
+    rr:predicateObjectMap <uuid/49eeb7cf-54d6-4e11-ac56-72dffde37ec2>,
+        <uuid/58f8e393-c1b0-4643-b626-278ddd3be784> ;
+    rr:subjectMap <uuid/307581f3-8e66-4f31-a4e9-bbb812e88f2e> .
+
+<map_services2_0> a rr:TriplesMap ;
+    rdfs:label "services2" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;   
+    rr:predicateObjectMap <uuid/620749ab-6881-4b5c-a207-58a11d88c135>,
+        <uuid/b971cd9e-ad63-4132-910f-981c16b29ec7> ;
+    rr:subjectMap <uuid/ad4df308-ef3a-4ecb-87aa-44638dd01299> .
+
+<map_shape_points_0> a rr:TriplesMap ;
+    rdfs:label "shape_points" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/SHAPES.csv" ] ;   
+    rr:predicateObjectMap <uuid/005e59a7-65f9-48a4-970a-f2f0a0748c68>,
+        <uuid/154fe515-8e32-4e31-971b-e44bc195b8e2>,
+        <uuid/6b010568-6397-4b8e-adbc-48b29a3f05bd>,
+        <uuid/74af574e-5473-4a57-8f95-5e4dde4e50a6>,
+        <uuid/8c230229-b2bd-44aa-8e70-d894b4c4e01f> ;
+    rr:subjectMap <uuid/6395d4eb-ff37-42a5-b899-47e553032970> .
+
+<map_shapes_0> a rr:TriplesMap ;
+    rdfs:label "shapes" ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/SHAPES.csv" ] ; 
+    rr:predicateObjectMap <uuid/07ae1bdd-2e5f-4754-b50c-6f676152d66a>,
+        <uuid/dbec6b26-a816-427e-b464-8348aa2ad62e> ;
+    rr:subjectMap <uuid/869060fd-bea9-42cb-ba7d-d3db0bdf2bcb> .
+
+<uuid/005e59a7-65f9-48a4-970a-f2f0a0748c68> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/6c930fa3-bf42-4afc-babd-610e2e58618d> ;
+    rr:predicateMap <uuid/062ee39c-d504-48ac-a2f5-b6adbeb32bfb> .
+
+<uuid/00a44410-0945-424a-9e15-5af7cf257066> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/535663f6-b5eb-4dce-a5d1-eb763d12ac69> ;
+    rr:predicateMap <uuid/aea28a39-8aa9-43a4-bc5e-2cc87424b1cd> .
+
+<uuid/01442b5d-fdb0-45d1-9a7d-371bcd3ba54d> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#headwaySeconds> .
+
+<uuid/022bc5d5-82f2-45e8-8bdd-76c4f8317898> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/077b9f93-aa6c-4820-8b25-bdd289b8ac94> ;
+    rr:predicateMap <uuid/96a8fa4f-1cdb-4328-9cb2-8292d4bb3e1c> .
+
+<uuid/02655195-0a99-42f8-8df3-3a9d1fbd2cb4> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/phone> .
+
+<uuid/026a984d-efdb-4c86-8d88-479fb387c87f> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#longName> .
+
+<uuid/02a49f3f-f9eb-4aa9-a8cb-bb1a9fa6990c> a rr:ObjectMap ;
+    rr:joinCondition <uuid/19091fe8-8b32-4fd3-866d-3faded6c7376> ;
+    rr:parentTriplesMap <map_trips_0> .
+
+<uuid/03c5ce26-09d0-4dfb-ab4f-3bab88acdea9> a rr:ObjectMap ;
+    rml:reference "friday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/04222dd4-8813-411d-ba62-66bb70888158> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#routeUrl> .
+
+<uuid/0423937c-c426-4bf7-94c0-f251dedae3dd> a rr:PredicateMap ;
+    rr:constant <http://schema.org/version> .
+
+<uuid/04bcdb09-223d-400f-810a-d08f0c08bc99> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/22eda693-eb05-4cad-9acf-648c715f4eb7> ;
+    rr:predicateMap <uuid/5c465d89-f082-42f1-bc71-de86ae2bef8d> .
+
+<uuid/05614e21-1a51-492a-87e6-efde1938579d> a rr:ObjectMap ;
+    rml:reference "agency_lang" ;
+    rr:termType rr:Literal .
+
+<uuid/0570fee1-3234-4a5b-8f87-ae874cd4a6f6> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/062ee39c-d504-48ac-a2f5-b6adbeb32bfb> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#distanceTraveled> .
+
+<uuid/0759e895-0648-4331-8363-05e47cfea1bd> a rr:ObjectMap ;
+    rml:reference "sunday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/07755369-41b6-44c3-8cef-922bacb8c1a5> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/2ac5ac3c-ab37-4d6d-a4b8-5583202d4be2> ;
+    rr:predicateMap <uuid/9d111eb1-253d-4e5b-b75d-bdf12c8584e6> .
+
+<uuid/077b9f93-aa6c-4820-8b25-bdd289b8ac94> a rr:ObjectMap ;
+    rml:reference "wednesday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/07ae1bdd-2e5f-4754-b50c-6f676152d66a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/cdfcc9af-7b18-46e9-86e3-059c270b554d> ;
+    rr:predicateMap <uuid/d187bdc5-2405-4dbd-a807-eb83a0beac01> .
+
+<uuid/07bb5b6b-d6ed-4f7f-91e6-b73e739cfca5> a rr:ObjectMap ;
+    rml:reference "trip_headsign" ;
+    rr:termType rr:Literal .
+
+<uuid/0935b0d2-1770-4003-adaf-a8b3cc0a2297> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#serviceRule> .
+
+<uuid/094ead76-3af2-4155-8f95-fc88f9ccaff9> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/f92dfb5f-34b0-4310-99d6-bad04c046c43> ;
+    rr:predicateMap <uuid/b60cf0e5-253f-42f0-981c-b5782b349a99> .
+
+<uuid/0bb3d798-829d-4dbf-bf8c-b6aaac5bdadf> a rr:ObjectMap ;
+    rml:reference "end_time" ;
+    rr:termType rr:Literal .
+
+<uuid/0c8a374f-4699-446a-b447-9f2b9978d06d> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#pointSequence> .
+
+<uuid/0e70e1ea-eeed-488d-bde9-37e3e8870dd8> a rr:ObjectMap ;
+    rml:reference "block_id" ;
+    rr:termType rr:Literal .
+
+<uuid/0ea3c7f3-6fdf-40ea-9c67-f8096a27e7f0> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/fba27f0d-463b-4d1b-a021-1d2d7dfcda27> ;
+    rr:predicateMap <uuid/0423937c-c426-4bf7-94c0-f251dedae3dd> .
+
+<uuid/0eee4635-6e04-41a9-bf33-d5e749fd3690> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/bb15a5e7-3791-49a8-bf52-774e2056fd8e> ;
+    rr:predicateMap <uuid/613dd6b1-7f74-4997-8716-c6aace63a62b> .
+
+<uuid/0f22c4a1-1715-4cd5-bac8-553b4ad9d584> a rr:ObjectMap ;
+    rr:joinCondition <uuid/faa1182b-3720-4515-b633-a459019531b9> ;
+    rr:parentTriplesMap <map_stops_0> .
+
+<uuid/1076d4c0-e677-4227-9a90-2901715c294f> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/61a5c1a9-1e0e-4396-a7aa-61f33b80a870> ;
+    rr:predicateMap <uuid/f3ed9a60-88e4-45c9-b024-520b3114c807> .
+
+<uuid/10871dd9-5e65-4794-9210-97a5abcfd037> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/12d21539-9d5f-4920-8cd1-12b061528b70> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/description> .
+
+<uuid/1403bc60-1b56-45e6-ad8c-48153666e0f5> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#shapePoint> .
+
+<uuid/147117e2-a64b-4817-9ff8-4ea732d61328> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/f6d0a73b-6d98-4c39-8ac1-b94010456b94> ;
+    rr:predicateMap <uuid/36a0c620-b0d8-42cd-826c-85a6bc622432> .
+
+<uuid/154fe515-8e32-4e31-971b-e44bc195b8e2> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/3c2b8ea3-901f-4106-8396-deb505341f58> ;
+    rr:predicateMap <uuid/0c8a374f-4699-446a-b447-9f2b9978d06d> .
+
+<uuid/16571324-e93e-4872-9d39-645ad6d48dca> a rr:ObjectMap ;
+    rml:reference "stop_url" ;
+    rr:termType rr:IRI .
+
+<uuid/16d9fb41-377d-4eed-a771-93911a42051d> a rr:ObjectMap ;
+    rml:reference "stop_name" ;
+    rr:termType rr:Literal .
+
+<uuid/17362d6f-c17e-4eb6-8ac9-f65df6b3a644> a rr:ObjectMap ;
+    rml:reference "direction_id" ;
+    rr:termType rr:Literal .
+
+<uuid/17cfcb4f-4956-4ffd-88ab-934e094d4a11> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Trip" ;
+    rr:termType rr:IRI .
+
+<uuid/17fb4bcd-693d-45dd-99eb-168620c814ef> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/frequency/{trip_id}-{start_time}" .
+
+<uuid/18f0b534-4b1e-43af-902f-e31176ba6ca8> rr:child "service_id" ;
+    rr:parent "service_id" .
+
+<uuid/18fd8671-e8f5-48d1-a586-3463b2f057a5> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#parentStation> .
+
+<uuid/19091fe8-8b32-4fd3-866d-3faded6c7376> rr:child "trip_id" ;
+    rr:parent "trip_id" .
+
+<uuid/195217b4-a2ea-485c-873c-db57fb5f6cd1> a rr:PredicateMap ;
+    rr:constant <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+<uuid/199090ec-b33e-4695-a604-bb703ccc2c75> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/page> .
+
+<uuid/19d00c58-0457-4152-ba8b-ed11180964c2> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/fd406cba-545d-416b-a49a-82556ed3961d> ;
+    rr:predicateMap <uuid/3fce757f-afcb-40f8-abfc-904058f74b11> .
+
+<uuid/1ad934f0-02d0-4d54-b9f3-4473d89b872e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/5cf6fa32-53a9-4d84-987f-2a5ac9e54a94> ;
+    rr:predicateMap <uuid/64a77bc3-45e1-470e-bc27-e4b38050d5ad> .
+
+<uuid/1adde4eb-af3e-4e9e-a4f9-660b3f4df2a0> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/DropOffType/{drop_off_type}" ;
+    rr:termType rr:IRI .
+
+<uuid/1b671390-964b-40a2-a08a-6f9a5a95d083> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/stoptimes/{trip_id}-{stop_id}-{arrival_time}" .
+
+<uuid/1ca0cd65-fd3e-4e10-9e99-7afdc38f100e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/9059c4b5-33ea-4fdb-9f08-0ea2a01b4c07> ;
+    rr:predicateMap <uuid/ed2701d0-b84d-46e5-9d41-6ab6fe600bd6> .
+
+<uuid/1e063c06-29e3-40e6-937a-626d4c215be2> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/c87145fd-8866-4345-b1d1-5013c7393c47> ;
+    rr:predicateMap <uuid/e87fa964-69cb-4a8c-aec3-e217419f034d> .
+
+<uuid/20e083b4-13a3-45ac-b67e-ee0b25493910> a rr:ObjectMap ;
+    rml:reference "zone_id" ;
+    rr:termType rr:Literal .
+
+<uuid/22c99cf0-3b2b-4976-8629-5eb226e014b9> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/trips/{trip_id}" .
+
+<uuid/22eda693-eb05-4cad-9acf-648c715f4eb7> a rr:ObjectMap ;
+    rr:joinCondition <uuid/e7555579-4dde-4aa5-b589-08837cfd3ddb> ;
+    rr:parentTriplesMap <map_routes_0> .
+
+<uuid/2342364b-a4e6-40c9-99d0-7315e4cc75dd> rr:child "service_id" ;
+    rr:parent "service_id" .
+
+<uuid/2426d5f3-37a2-4fe6-b2a8-0bde19012072> a rr:ObjectMap ;
+    rml:reference "shape_pt_lat" ;
+    rr:datatype xsd:double ;
+    rr:termType rr:Literal .
+
+<uuid/25f8dfb9-ced7-49b0-91a1-13078be0ee08> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/a861a392-669e-4f7b-954e-85218bf59eb4> ;
+    rr:predicateMap <uuid/72826db6-2ac8-4afd-8df1-60ee17500531> .
+
+<uuid/26c91de1-cb60-4142-892d-e10379718490> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/cd0e91db-7187-46b6-b1fe-ac9b5d26773d> ;
+    rr:predicateMap <uuid/bf159895-736a-497d-9308-6a5f7c14d0c5> .
+
+<uuid/2a907916-7fa4-4b1f-9b28-421ebfd009f3> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#serviceRule> .
+
+<uuid/2ac5ac3c-ab37-4d6d-a4b8-5583202d4be2> a rr:ObjectMap ;
+    rr:joinCondition <uuid/9df71acc-a212-41e5-b469-763ec1cf9734> ;
+    rr:parentTriplesMap <map_shapes_0> .
+
+<uuid/2c3b97a9-d58c-4467-a42c-727d3e39c555> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/33b3d310-d567-476a-b691-391617a41610> ;
+    rr:predicateMap <uuid/10871dd9-5e65-4794-9210-97a5abcfd037> .
+
+<uuid/2ccf2607-908b-441e-97f5-c19fae35b744> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#routeType> .
+
+<uuid/2d85fcbf-ba3c-4eeb-a034-5f4a361ba512> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/calendar_date_rule/{service_id}-{date}" .
+
+<uuid/2dfa4b93-57e1-4758-94d4-99bcbcf69bc6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/966900b7-abaa-4a04-be86-15652e70a8a1> ;
+    rr:predicateMap <uuid/eca0b814-7139-4a07-9b49-3460c0db9812> .
+
+<uuid/2ec102d9-2197-45ab-8605-6ce4cd1fd75a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/b3aa61bf-ebd3-48da-be25-538b54dbe5e3> ;
+    rr:predicateMap <uuid/3c54a6b2-5544-445b-a793-ae053eb02cc9> .
+
+<uuid/2f3cae5a-e19c-4567-a047-1ea0806d8f04> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/3bc52b48-8fb9-40fc-a66d-8d24a1488bbc> ;
+    rr:predicateMap <uuid/026a984d-efdb-4c86-8d88-479fb387c87f> .
+
+<uuid/307581f3-8e66-4f31-a4e9-bbb812e88f2e> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/services/{service_id}" .
+
+<uuid/33024771-efc1-4432-9f6c-8228ba2a9a4a> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/page> .
+
+<uuid/335307a8-90ef-4ba9-8b61-d7afe3a4bfcd> a rr:PredicateMap ;
+    rr:constant <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+
+<uuid/33b3d310-d567-476a-b691-391617a41610> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Stop" ;
+    rr:termType rr:IRI .
+
+<uuid/344e67ca-327c-4e41-b223-3b07e2352ad1> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/PickupType/{pickup_type}" ;
+    rr:termType rr:IRI .
+
+<uuid/34672d09-6acf-4068-8472-f2856e48b122> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/07bb5b6b-d6ed-4f7f-91e6-b73e739cfca5> ;
+    rr:predicateMap <uuid/db0b6f9a-68a9-4a54-8927-f958c3813e27> .
+
+<uuid/35ecc7eb-9e73-46ca-adf6-5148b6663812> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/44d776f2-2e77-4aac-92ff-d082c99bdb92> ;
+    rr:predicateMap <uuid/49fd29ee-3734-4620-a3d8-2ccd461a078a> .
+
+<uuid/36a0c620-b0d8-42cd-826c-85a6bc622432> a rr:PredicateMap ;
+    rr:constant <http://schema.org/startDate> .
+
+<uuid/3830af55-9dda-4125-80e6-c98bc317b55f> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#thursday> .
+
+<uuid/3873f511-0b4e-429a-a92c-53675a468117> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/404a0e99-a53a-41b2-bc59-90349fdb28c6> ;
+    rr:predicateMap <uuid/80bc78f4-7c70-4ecd-8467-33be3ff71244> .
+
+<uuid/388698cc-d7d1-4c9d-bb3b-5c6fac8b90f4> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/name> .
+
+<uuid/38f221a1-0f8e-4329-bf19-48626b334f5b> a rr:ObjectMap ;
+    rml:reference "route_url" ;
+    rr:termType rr:IRI .
+
+<uuid/3964df19-8912-4843-af6e-0af5db0de65d> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#zone> .
+
+<uuid/3b5b1d79-d907-4631-80b0-64071932198c> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Frequency" ;
+    rr:termType rr:IRI .
+
+<uuid/3bc52b48-8fb9-40fc-a66d-8d24a1488bbc> a rr:ObjectMap ;
+    rml:reference "route_long_name" ;
+    rr:termType rr:Literal .
+
+<uuid/3c2b8ea3-901f-4106-8396-deb505341f58> a rr:ObjectMap ;
+    rml:reference "shape_pt_sequence" ;
+    rr:termType rr:Literal .
+
+<uuid/3c54a6b2-5544-445b-a793-ae053eb02cc9> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#startTime> .
+
+<uuid/3dde2f5f-f3b7-43eb-9335-ce6177b880d6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/f86ed552-c895-49a2-bbf0-f2cce2d51e0e> ;
+    rr:predicateMap <uuid/582de350-cc24-41ea-a6df-7e50d4013d0a> .
+
+<uuid/3e63799a-680d-45c2-b35d-0681b1e9f50c> a rr:ObjectMap ;
+    rml:reference "feed_lang" ;
+    rr:termType rr:Literal .
+
+<uuid/3fce757f-afcb-40f8-abfc-904058f74b11> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#dateAddition> .
+
+<uuid/4041487d-e14f-40f9-9eec-0b95a8f9ea46> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/404a0e99-a53a-41b2-bc59-90349fdb28c6> a rr:ObjectMap ;
+    rml:reference "stop_sequence" ;
+    rr:datatype xsd:integer ;
+    rr:termType rr:Literal .
+
+<uuid/426d5e79-9229-48ff-bc4f-b4a3722ace5b> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/6e4358fa-279c-49b8-b710-9cce8d7339c4> ;
+    rr:predicateMap <uuid/fab4cd10-6f57-4b15-9228-24d58ff31e4b> .
+
+<uuid/42aeca04-c55f-461e-8668-d0f51c7845f1> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/4ea52196-3593-48ec-bb7a-a8fb32d35366> ;
+    rr:predicateMap <uuid/543c7b53-a6e4-4aa8-8881-166322130d30> .
+
+<uuid/42e127d5-e23d-4f52-a5b1-44f913b7929d> a rr:ObjectMap ;
+    rml:reference "saturday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/44bdfaf2-fd84-4218-9735-adfa46ce35ca> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#block> .
+
+<uuid/44d776f2-2e77-4aac-92ff-d082c99bdb92> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Agency" ;
+    rr:termType rr:IRI .
+
+<uuid/46dd4f6d-d73c-4085-a826-9b2eae6e7b79> a rr:ObjectMap ;
+    rml:reference "agency_phone" ;
+    rr:termType rr:Literal .
+
+<uuid/47757eae-5baa-4260-a27c-39fef0f447c5> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#direction> .
+
+<uuid/481fd6d8-1856-4fc6-b867-894f553d7b49> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/agency/{agency_id}" .
+
+<uuid/49eeb7cf-54d6-4e11-ac56-72dffde37ec2> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/801a40e2-f0e8-4997-8c30-d267f17a9f67> ;
+    rr:predicateMap <uuid/87654236-2380-4fe9-85ca-4e161187afa1> .
+
+<uuid/49fd29ee-3734-4620-a3d8-2ccd461a078a> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/4a78338a-8b8c-424f-8c6d-548c1fc97f28> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#endTime> .
+
+<uuid/4ea52196-3593-48ec-bb7a-a8fb32d35366> a rr:ObjectMap ;
+    rr:joinCondition <uuid/b4b830ef-db3b-4a42-9573-1135b20a84a7> ;
+    rr:parentTriplesMap <map_trips_0> .
+
+<uuid/507501f6-e605-4da0-9f20-228f6045dc2d> rr:child "shape_id" ;
+    rr:parent "shape_id" .
+
+<uuid/535663f6-b5eb-4dce-a5d1-eb763d12ac69> a rr:ObjectMap ;
+    rml:reference "feed_publisher_url" ;
+    rr:termType rr:IRI .
+
+<uuid/543c7b53-a6e4-4aa8-8881-166322130d30> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#trip> .
+
+<uuid/555ca36f-8756-4f84-b0ea-1743a9395746> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/b3671eb1-6e73-4590-9d6f-340a73fbddf6> ;
+    rr:predicateMap <uuid/e3d5400b-b684-441d-b6f2-31555435b709> .
+
+<uuid/56ee4e0b-8f3a-465a-8adb-1ef313775404> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/calendar_rules/{service_id}" .
+
+<uuid/582de350-cc24-41ea-a6df-7e50d4013d0a> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#textColor> .
+
+<uuid/58309b23-82a6-4ecd-bcad-0d20850d38e1> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#timeZone> .
+
+<uuid/58f8e393-c1b0-4643-b626-278ddd3be784> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/eb3e71c6-5f4e-441d-b164-f10bd49ba19a> ;
+    rr:predicateMap <uuid/2a907916-7fa4-4b1f-9b28-421ebfd009f3> .
+
+<uuid/5c15d106-f2bf-46e6-89c3-b6ef5833c461> a rr:ObjectMap ;
+    rml:reference "stop_id" ;
+    rr:termType rr:Literal .
+
+<uuid/5c267362-ec3f-4f3a-a84b-7ff206b03aca> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#code> .
+
+<uuid/5c465d89-f082-42f1-bc71-de86ae2bef8d> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#route> .
+
+<uuid/5cf6fa32-53a9-4d84-987f-2a5ac9e54a94> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#CalendarRule" ;
+    rr:termType rr:IRI .
+
+<uuid/5dc69abe-3a27-4939-8aad-e5ac687528d1> a rr:ObjectMap ;
+    rr:joinCondition <uuid/18f0b534-4b1e-43af-902f-e31176ba6ca8> ;
+    rr:parentTriplesMap <map_calendar_date_rules_0> .
+
+<uuid/5e29ee44-18e1-4253-8b66-a0e01cb7f947> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/5f528244-2424-4be1-b45b-77a45a69dc9d> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/0bb3d798-829d-4dbf-bf8c-b6aaac5bdadf> ;
+    rr:predicateMap <uuid/4a78338a-8b8c-424f-8c6d-548c1fc97f28> .
+
+<uuid/5fd39021-dc80-40c6-9914-78185209f2ca> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/96db94ee-df8d-4dcf-9dc7-2a18d4cc09cb> ;
+    rr:predicateMap <uuid/9890cdfe-caef-4531-a734-83663f31eb26> .
+
+<uuid/6032a883-a9bd-4931-89d0-7f6803c42880> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/c719489d-d646-4eb6-9c68-98c74df4fe0f> ;
+    rr:predicateMap <uuid/388698cc-d7d1-4c9d-bb3b-5c6fac8b90f4> .
+
+<uuid/60b21060-841d-42c5-81db-29bd6f4671b8> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#service> .
+
+<uuid/613dd6b1-7f74-4997-8716-c6aace63a62b> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#departureTime> .
+
+<uuid/61a5c1a9-1e0e-4396-a7aa-61f33b80a870> a rr:ObjectMap ;
+    rml:reference "stop_headsign" ;
+    rr:termType rr:Literal .
+
+<uuid/620749ab-6881-4b5c-a207-58a11d88c135> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/edc9a99e-2aa5-4901-8b3d-f99580d2654c> ;
+    rr:predicateMap <uuid/5e29ee44-18e1-4253-8b66-a0e01cb7f947> .
+
+<uuid/6395d4eb-ff37-42a5-b899-47e553032970> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/shape_point/{shape_id}-{shape_pt_sequence}" .
+
+<uuid/63cdcf49-f1d0-42a8-93f3-b70157b850e7> a rr:ObjectMap ;
+    rr:joinCondition <uuid/e72d1ca6-26db-4671-a29a-853b6a38eeb6> ;
+    rr:parentTriplesMap <map_stops_0> .
+
+<uuid/64788c14-2c21-41da-8c43-651274eb9d46> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#CalendarDateRule" ;
+    rr:termType rr:IRI .
+
+<uuid/64a77bc3-45e1-470e-bc27-e4b38050d5ad> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/65f85772-0c63-4129-9f6b-0ca60cf39de9> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/bea288ae-889f-4ec4-92af-9b3359674831> ;
+    rr:predicateMap <uuid/d12c9e92-0e8d-4be0-84ad-c49747c70a07> .
+
+<uuid/678c6f8a-3c83-408a-b995-e39790b7fc26> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/6f942a5b-cc66-45e0-9bcb-2b1ce62c79de> ;
+    rr:predicateMap <uuid/2ccf2607-908b-441e-97f5-c19fae35b744> .
+
+<uuid/6828a239-4d90-4360-a44c-e0e7c31ce148> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/8d679c21-b301-4673-a9c9-1d6660929e22> ;
+    rr:predicateMap <uuid/3830af55-9dda-4125-80e6-c98bc317b55f> .
+
+<uuid/690a662b-1a45-49dd-83a1-539ec88ef781> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#fareUrl> .
+
+<uuid/69c54bde-a7a7-4d65-998a-eb03d1fbe4b9> a rr:ObjectMap ;
+    rml:reference "route_desc" ;
+    rr:termType rr:Literal .
+
+<uuid/6b010568-6397-4b8e-adbc-48b29a3f05bd> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/f1b001e5-e573-404b-8c15-bf1aae4ea83f> ;
+    rr:predicateMap <uuid/0570fee1-3234-4a5b-8f87-ae874cd4a6f6> .
+
+<uuid/6c930fa3-bf42-4afc-babd-610e2e58618d> a rr:ObjectMap ;
+    rml:reference "shape_dist_traveled" ;
+    rr:termType rr:Literal .
+
+<uuid/6d570ada-525e-401a-8798-b4c65415477d> a rr:ObjectMap ;
+    rml:reference "exact_times" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/6df6561c-05fe-4740-9d23-81c65a65d790> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/name> .
+
+<uuid/6e2a208f-236c-4597-9e95-6ad62ad55af6> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/identifier> .
+
+<uuid/6e4358fa-279c-49b8-b710-9cce8d7339c4> a rr:ObjectMap ;
+    rml:reference "start_date" ;
+    rr:datatype xsd:date ;
+    rr:termType rr:Literal .
+
+<uuid/6f942a5b-cc66-45e0-9bcb-2b1ce62c79de> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/RouteType/{route_type}" ;
+    rr:termType rr:IRI .
+
+<uuid/71d0e5cb-0697-4c25-8bce-cfa70661af72> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#sunday> .
+
+<uuid/72826db6-2ac8-4afd-8df1-60ee17500531> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#distanceTraveled> .
+
+<uuid/74af574e-5473-4a57-8f95-5e4dde4e50a6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/2426d5f3-37a2-4fe6-b2a8-0bde19012072> ;
+    rr:predicateMap <uuid/195217b4-a2ea-485c-873c-db57fb5f6cd1> .
+
+<uuid/754504a3-34e8-41a4-b491-84b1f48ab0c1> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#shortName> .
+
+<uuid/76dd9596-0fd6-4ed2-81b5-9862e19624bb> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/stops/{stop_id}" .
+
+<uuid/79708c1d-6679-4960-9521-8c66d38dc603> a rr:ObjectMap ;
+    rml:reference "stop_lat" ;
+    rr:datatype xsd:double ;
+    rr:termType rr:Literal .
+
+<uuid/79d9a098-fd08-4ee6-8e27-cbea33b3f35b> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/c0b1f296-8b17-40ad-bf4b-0aeebd4eb951> ;
+    rr:predicateMap <uuid/01442b5d-fdb0-45d1-9a7d-371bcd3ba54d> .
+
+<uuid/7aa85a0a-6d11-4824-9639-5e97f0faec8a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/05614e21-1a51-492a-87e6-efde1938579d> ;
+    rr:predicateMap <uuid/ec0744e4-99df-40cd-b45f-4504493b0ae0> .
+
+<uuid/7c76c25e-bf9f-44e2-a45b-91b63fd6422a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/42e127d5-e23d-4f52-a5b1-44f913b7929d> ;
+    rr:predicateMap <uuid/fadee306-3e2b-4943-b6ec-70306d3cff8c> .
+
+<uuid/801a40e2-f0e8-4997-8c30-d267f17a9f67> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Service" ;
+    rr:termType rr:IRI .
+
+<uuid/80bc78f4-7c70-4ecd-8467-33be3ff71244> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#stopSequence> .
+
+<uuid/823ceb3e-cebd-49c0-8d0c-d8c87849d333> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/8e5a5525-3497-4b3e-9815-fbd71b8af01e> ;
+    rr:predicateMap <uuid/690a662b-1a45-49dd-83a1-539ec88ef781> .
+
+<uuid/82da6f12-b690-4612-a13b-8a5f8c9887be> a rr:ObjectMap ;
+    rr:joinCondition <uuid/d5cc1b46-09bc-4240-ba69-2f8b863074d9> ;
+    rr:parentTriplesMap <map_services2_0> .
+
+<uuid/84bf2276-3580-49d4-8220-585a97fd859a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/ba697085-9c47-48d4-816d-53ce43cc3fba> ;
+    rr:predicateMap <uuid/ff929403-4f18-47a0-922f-8fb934098fa0> .
+
+<uuid/869060fd-bea9-42cb-ba7d-d3db0bdf2bcb> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/shape/{shape_id}" .
+
+<uuid/87654236-2380-4fe9-85ca-4e161187afa1> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/8b2b7cb4-d723-46a1-8d65-d73b3aee232c> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Route" ;
+    rr:termType rr:IRI .
+
+<uuid/8c230229-b2bd-44aa-8e70-d894b4c4e01f> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/ede87934-6e47-4ddb-bbda-9d1eafb8bfe4> ;
+    rr:predicateMap <uuid/f3092f48-5cf1-4c84-b54b-c5ab70c3589c> .
+
+<uuid/8d679c21-b301-4673-a9c9-1d6660929e22> a rr:ObjectMap ;
+    rml:reference "thursday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/8d742816-4e06-474b-a034-4cf040f99eb8> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#StopTime" ;
+    rr:termType rr:IRI .
+
+<uuid/8d836b70-a185-43b9-83a8-8ef581810e61> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/language> .
+
+<uuid/8e2b808c-4d27-42ba-be2b-6bdcc5ad8418> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#arrivalTime> .
+
+<uuid/8e5a5525-3497-4b3e-9815-fbd71b8af01e> a rr:ObjectMap ;
+    rml:reference "agency_fare_url" ;
+    rr:termType rr:IRI .
+
+<uuid/8f481497-b70d-42a0-b6fe-cb3d124ff057> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#trip> .
+
+<uuid/9059c4b5-33ea-4fdb-9f08-0ea2a01b4c07> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/WheelchairBoardingStatus/{wheelchair_boarding}" ;
+    rr:termType rr:IRI .
+
+<uuid/907659e8-be1d-40f7-befd-3e9e72a40938> a rr:ObjectMap ;
+    rml:reference "tuesday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/93d1d1c3-1bec-4e17-9c74-c8fc0c99ea05> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/8d742816-4e06-474b-a034-4cf040f99eb8> ;
+    rr:predicateMap <uuid/dc4c3f65-8296-4d9e-aa0a-54c69b12e6ba> .
+
+<uuid/94461922-6195-403d-817c-cabc162be2ab> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/17cfcb4f-4956-4ffd-88ab-934e094d4a11> ;
+    rr:predicateMap <uuid/4041487d-e14f-40f9-9eec-0b95a8f9ea46> .
+
+<uuid/95d9449e-6d75-4952-a0ed-da8e13e0b28a> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/966900b7-abaa-4a04-be86-15652e70a8a1> a rr:ObjectMap ;
+    rml:reference "date" ;
+    rr:datatype xsd:date ;
+    rr:termType rr:Literal .
+
+<uuid/96a8fa4f-1cdb-4328-9cb2-8292d4bb3e1c> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#wednesday> .
+
+<uuid/96db94ee-df8d-4dcf-9dc7-2a18d4cc09cb> a rr:ObjectMap ;
+    rml:reference "end_date" ;
+    rr:datatype xsd:date ;
+    rr:termType rr:Literal .
+
+<uuid/975c9f31-d96d-4b59-82f8-9520f50166dc> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#exactTimes> .
+
+<uuid/9890cdfe-caef-4531-a734-83663f31eb26> a rr:PredicateMap ;
+    rr:constant <http://schema.org/endDate> .
+
+<uuid/9a91710e-a741-4543-9b1a-e039fe503b7b> a rr:PredicateMap ;
+    rr:constant <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+<uuid/9b96f2f1-3151-4c76-8743-dad8e7355148> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/69c54bde-a7a7-4d65-998a-eb03d1fbe4b9> ;
+    rr:predicateMap <uuid/12d21539-9d5f-4920-8cd1-12b061528b70> .
+
+<uuid/9cb6a7d0-090b-4cbc-8e0b-55aaa455be55> a rr:ObjectMap ;
+    rml:reference "monday" ;
+    rr:datatype xsd:boolean ;
+    rr:termType rr:Literal .
+
+<uuid/9d111eb1-253d-4e5b-b75d-bdf12c8584e6> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#shape> .
+
+<uuid/9df71acc-a212-41e5-b469-763ec1cf9734> rr:child "shape_id" ;
+    rr:parent "shape_id" .
+
+<uuid/9e01309f-0be6-46ab-9bc7-9b28949e60ca> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/5c15d106-f2bf-46e6-89c3-b6ef5833c461> ;
+    rr:predicateMap <uuid/6e2a208f-236c-4597-9e95-6ad62ad55af6> .
+
+<uuid/a0a4e9fc-3a13-4566-b894-327382ecd277> a rr:ObjectMap ;
+    rml:reference "stop_code" ;
+    rr:termType rr:Literal .
+
+<uuid/a2543f89-f20b-40b4-a47d-4908f2ee9298> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/63cdcf49-f1d0-42a8-93f3-b70157b850e7> ;
+    rr:predicateMap <uuid/a3c15b70-b70a-4637-a699-52b2fc91a803> .
+
+<uuid/a317021d-8ed3-46b5-ab6b-d00e3a67668f> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/20e083b4-13a3-45ac-b67e-ee0b25493910> ;
+    rr:predicateMap <uuid/3964df19-8912-4843-af6e-0af5db0de65d> .
+
+<uuid/a3c15b70-b70a-4637-a699-52b2fc91a803> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#stop> .
+
+<uuid/a5c20f17-81ed-46ba-ae89-fd39e8e8081c> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/907659e8-be1d-40f7-befd-3e9e72a40938> ;
+    rr:predicateMap <uuid/d9d2dbb5-b85d-4c63-a7d3-b8c053dbf263> .
+
+<uuid/a5f2f911-18ea-4fdd-a0c3-29c07d722cae> a rr:ObjectMap ;
+    rml:reference "agency_url" ;
+    rr:termType rr:IRI .
+
+<uuid/a8195f4a-af09-4516-942c-a5da60b8e849> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/a861a392-669e-4f7b-954e-85218bf59eb4> a rr:ObjectMap ;
+    rml:reference "shape_dist_traveled" ;
+    rr:termType rr:Literal .
+
+<uuid/a9255571-f410-4432-885a-658ff2d27d4e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/1adde4eb-af3e-4e9e-a4f9-660b3f4df2a0> ;
+    rr:predicateMap <uuid/b06dba5e-ae28-450d-9854-63f6a7d19072> .
+
+<uuid/ab281f76-867d-4d56-8112-ba4b4627b024> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/3e63799a-680d-45c2-b35d-0681b1e9f50c> ;
+    rr:predicateMap <uuid/8d836b70-a185-43b9-83a8-8ef581810e61> .
+
+<uuid/ac216b60-4229-4f96-87ab-1ab4f6507442> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/6d570ada-525e-401a-8798-b4c65415477d> ;
+    rr:predicateMap <uuid/975c9f31-d96d-4b59-82f8-9520f50166dc> .
+
+<uuid/acb9c193-7c69-436b-bcd7-14108f5aef47> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/a5f2f911-18ea-4fdd-a0c3-29c07d722cae> ;
+    rr:predicateMap <uuid/33024771-efc1-4432-9f6c-8228ba2a9a4a> .
+
+<uuid/ad4df308-ef3a-4ecb-87aa-44638dd01299> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/services/{service_id}" .
+
+<uuid/aea28a39-8aa9-43a4-bc5e-2cc87424b1cd> a rr:PredicateMap ;
+    rr:constant <http://xmlns.com/foaf/0.1/page> .
+
+<uuid/af416ae1-28bf-4558-858d-bd427e5dc3a6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/16d9fb41-377d-4eed-a771-93911a42051d> ;
+    rr:predicateMap <uuid/6df6561c-05fe-4740-9d23-81c65a65d790> .
+
+<uuid/af96ce54-0492-4233-88dd-14aac3f36bec> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/16571324-e93e-4872-9d39-645ad6d48dca> ;
+    rr:predicateMap <uuid/199090ec-b33e-4695-a604-bb703ccc2c75> .
+
+<uuid/b06dba5e-ae28-450d-9854-63f6a7d19072> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#dropOffType> .
+
+<uuid/b3671eb1-6e73-4590-9d6f-340a73fbddf6> a rr:ObjectMap ;
+    rml:reference "route_short_name" ;
+    rr:termType rr:Literal .
+
+<uuid/b3aa61bf-ebd3-48da-be25-538b54dbe5e3> a rr:ObjectMap ;
+    rml:reference "start_time" ;
+    rr:termType rr:Literal .
+
+<uuid/b489ceb4-e79e-42f0-8d42-45a4a4bf2416> a rr:ObjectMap ;
+    rml:reference "arrival_time" ;
+    rr:datatype xsd:duration ;
+    rr:termType rr:Literal .
+
+<uuid/b4b830ef-db3b-4a42-9573-1135b20a84a7> rr:child "trip_id" ;
+    rr:parent "trip_id" .
+
+<uuid/b5fe3225-7c9d-4fe2-9097-280b93df5a74> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/0e70e1ea-eeed-488d-bde9-37e3e8870dd8> ;
+    rr:predicateMap <uuid/44bdfaf2-fd84-4218-9735-adfa46ce35ca> .
+
+<uuid/b60cf0e5-253f-42f0-981c-b5782b349a99> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/b7488923-9d32-4027-a649-113ee01df4b3> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/02a49f3f-f9eb-4aa9-a8cb-bb1a9fa6990c> ;
+    rr:predicateMap <uuid/8f481497-b70d-42a0-b6fe-cb3d124ff057> .
+
+<uuid/b876ec06-d089-45e1-9759-2644c556406f> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/routes/{route_id}" .
+
+<uuid/b94f674f-9320-4292-87e6-fabe75d9e0c4> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/f965e7b7-017e-4549-a435-32f5f7db79f8> ;
+    rr:predicateMap <uuid/754504a3-34e8-41a4-b491-84b1f48ab0c1> .
+
+<uuid/b971cd9e-ad63-4132-910f-981c16b29ec7> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/5dc69abe-3a27-4939-8aad-e5ac687528d1> ;
+    rr:predicateMap <uuid/0935b0d2-1770-4003-adaf-a8b3cc0a2297> .
+
+<uuid/ba697085-9c47-48d4-816d-53ce43cc3fba> a rr:ObjectMap ;
+    rml:reference "agency_timezone" ;
+    rr:termType rr:Literal .
+
+<uuid/ba78bea5-d9d7-431a-bd3f-56b084c844b8> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/03c5ce26-09d0-4dfb-ab4f-3bab88acdea9> ;
+    rr:predicateMap <uuid/d3269e95-ca1c-458a-939d-fa38da8a5961> .
+
+<uuid/bb15a5e7-3791-49a8-bf52-774e2056fd8e> a rr:ObjectMap ;
+    rml:reference "departure_time" ;
+    rr:datatype xsd:duration ;
+    rr:termType rr:Literal .
+
+<uuid/bb6651cf-10ce-473c-af9e-465399968db9> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/9cb6a7d0-090b-4cbc-8e0b-55aaa455be55> ;
+    rr:predicateMap <uuid/db979ba6-8538-4db2-b34a-fd3c7e6914b4> .
+
+<uuid/bd54108f-492a-4c4d-86f5-b36fbd1b9a56> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/e64efa8c-cfac-4bf8-ac47-9687c0b74ec4> ;
+    rr:predicateMap <uuid/e0f60289-c2d3-40c2-aeda-3e79aec70050> .
+
+<uuid/bea288ae-889f-4ec4-92af-9b3359674831> a rr:ObjectMap ;
+    rml:reference "feed_end_date" ;
+    rr:datatype xsd:date ;
+    rr:termType rr:Literal .
+
+<uuid/bf159895-736a-497d-9308-6a5f7c14d0c5> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/description> .
+
+<uuid/bfe0d85f-0121-429b-8e4f-db0d2939108a> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#agency> .
+
+<uuid/c0b1f296-8b17-40ad-bf4b-0aeebd4eb951> a rr:ObjectMap ;
+    rml:reference "headway_secs" ;
+    rr:datatype xsd:integer ;
+    rr:termType rr:Literal .
+
+<uuid/c3401e25-9ba0-4c1a-9ecd-4c678e289c0f> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/0759e895-0648-4331-8363-05e47cfea1bd> ;
+    rr:predicateMap <uuid/71d0e5cb-0697-4c25-8bce-cfa70661af72> .
+
+<uuid/c5d5e82e-3f35-4741-89bf-671b076d59b6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/e095622d-3750-453a-96a6-92cafd24a85e> ;
+    rr:predicateMap <uuid/335307a8-90ef-4ba9-8b61-d7afe3a4bfcd> .
+
+<uuid/c719489d-d646-4eb6-9c68-98c74df4fe0f> a rr:ObjectMap ;
+    rml:reference "agency_name" ;
+    rr:termType rr:Literal .
+
+<uuid/c85892c2-75a8-4071-9e78-f1b9703c4818> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/0f22c4a1-1715-4cd5-bac8-553b4ad9d584> ;
+    rr:predicateMap <uuid/18fd8671-e8f5-48d1-a586-3463b2f057a5> .
+
+<uuid/c87145fd-8866-4345-b1d1-5013c7393c47> a rr:ObjectMap ;
+    rml:reference "feed_publisher_name" ;
+    rr:termType rr:Literal .
+
+<uuid/c9dbd17a-e404-4d71-bac3-fd12911974da> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/82da6f12-b690-4612-a13b-8a5f8c9887be>,
+        <uuid/e004bf1b-2251-4e68-bf22-124a3c6c0e39> ;
+    rr:predicateMap <uuid/60b21060-841d-42c5-81db-29bd6f4671b8> .
+
+<uuid/cbb76650-2533-46f7-b2de-bf3566b9b4ca> a rr:ObjectMap ;
+    rr:joinCondition <uuid/fa925587-1f2e-492d-a1ae-92c066058248> ;
+    rr:parentTriplesMap <map_agency_0> .
+
+<uuid/cce32621-264c-4513-b641-8366d5f1647c> a rr:SubjectMap ;
+    rr:template "http://transport.linkeddata.es/madrid/metro/feed/{feed_publisher_name}" .
+
+<uuid/cd0e91db-7187-46b6-b1fe-ac9b5d26773d> a rr:ObjectMap ;
+    rml:reference "stop_desc" ;
+    rr:termType rr:Literal .
+
+<uuid/cd3dd617-24c2-4890-a71c-455d1b728798> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/64788c14-2c21-41da-8c43-651274eb9d46> ;
+    rr:predicateMap <uuid/95d9449e-6d75-4952-a0ed-da8e13e0b28a> .
+
+<uuid/cd4d6531-c884-43be-a745-41b2a588d48e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/344e67ca-327c-4e41-b223-3b07e2352ad1> ;
+    rr:predicateMap <uuid/e600c615-51a5-4cf7-be06-f93dc13f5102> .
+
+<uuid/cdfcc9af-7b18-46e9-86e3-059c270b554d> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Shape" ;
+    rr:termType rr:IRI .
+
+<uuid/d12c9e92-0e8d-4be0-84ad-c49747c70a07> a rr:PredicateMap ;
+    rr:constant <http://schema.org/endDate> .
+
+<uuid/d187bdc5-2405-4dbd-a807-eb83a0beac01> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/d3269e95-ca1c-458a-939d-fa38da8a5961> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#friday> .
+
+<uuid/d5cc1b46-09bc-4240-ba69-2f8b863074d9> rr:child "service_id" ;
+    rr:parent "service_id" .
+
+<uuid/d827a390-4dc8-496e-9c8c-b08d8ae24d4f> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#wheelchairAccessible> .
+
+<uuid/d9575a8f-8fc4-4694-89e8-6ae347c1bdfd> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/e17af0e7-6783-4d4d-bc3f-79490eeaeaed> ;
+    rr:predicateMap <uuid/d827a390-4dc8-496e-9c8c-b08d8ae24d4f> .
+
+<uuid/d9d2dbb5-b85d-4c63-a7d3-b8c053dbf263> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#tuesday> .
+
+<uuid/da4ac963-2a6c-4681-93f6-74fa7bb7fb56> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/LocationType/{location_type}" ;
+    rr:termType rr:IRI .
+
+<uuid/daf91cfe-ad83-4792-aaf9-ea00582f5429> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/e746a599-01dc-4c9a-bb01-55e781aa90e0> ;
+    rr:predicateMap <uuid/58309b23-82a6-4ecd-bcad-0d20850d38e1> .
+
+<uuid/db0b6f9a-68a9-4a54-8927-f958c3813e27> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#headsign> .
+
+<uuid/db979ba6-8538-4db2-b34a-fd3c7e6914b4> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#monday> .
+
+<uuid/dbec6b26-a816-427e-b464-8348aa2ad62e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/ec3be1eb-8bfe-4532-91a7-1c3c5b0ae2d5> ;
+    rr:predicateMap <uuid/1403bc60-1b56-45e6-ad8c-48153666e0f5> .
+
+<uuid/dc4c3f65-8296-4d9e-aa0a-54c69b12e6ba> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/e004bf1b-2251-4e68-bf22-124a3c6c0e39> a rr:ObjectMap ;
+    rr:joinCondition <uuid/f5eceabe-452e-4c62-b9be-6009c6e682e7> ;
+    rr:parentTriplesMap <map_services1_0> .
+
+<uuid/e095622d-3750-453a-96a6-92cafd24a85e> a rr:ObjectMap ;
+    rml:reference "stop_lon" ;
+    rr:datatype xsd:double ;
+    rr:termType rr:Literal .
+
+<uuid/e0f60289-c2d3-40c2-aeda-3e79aec70050> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#color> .
+
+<uuid/e17af0e7-6783-4d4d-bc3f-79490eeaeaed> a rr:ObjectMap ;
+    rr:template "http://transport.linkeddata.es/resource/WheelchairBoardingStatus/{wheelchair_accessible}" ;
+    rr:termType rr:IRI .
+
+<uuid/e3d5400b-b684-441d-b6f2-31555435b709> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#shortName> .
+
+<uuid/e53ca919-34a1-48da-8dcc-f245ffc284d3> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/8b2b7cb4-d723-46a1-8d65-d73b3aee232c> ;
+    rr:predicateMap <uuid/a8195f4a-af09-4516-942c-a5da60b8e849> .
+
+<uuid/e600c615-51a5-4cf7-be06-f93dc13f5102> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#pickupType> .
+
+<uuid/e64efa8c-cfac-4bf8-ac47-9687c0b74ec4> a rr:ObjectMap ;
+    rml:reference "route_color" ;
+    rr:termType rr:Literal .
+
+<uuid/e72d1ca6-26db-4671-a29a-853b6a38eeb6> rr:child "stop_id" ;
+    rr:parent "stop_id" .
+
+<uuid/e746a599-01dc-4c9a-bb01-55e781aa90e0> a rr:ObjectMap ;
+    rml:reference "stop_timezone" ;
+    rr:termType rr:Literal .
+
+<uuid/e7555579-4dde-4aa5-b589-08837cfd3ddb> rr:child "route_id" ;
+    rr:parent "route_id" .
+
+<uuid/e87fa964-69cb-4a8c-aec3-e217419f034d> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/publisher> .
+
+<uuid/eb3e71c6-5f4e-441d-b164-f10bd49ba19a> a rr:ObjectMap ;
+    rr:joinCondition <uuid/2342364b-a4e6-40c9-99d0-7315e4cc75dd> ;
+    rr:parentTriplesMap <map_calendar_rules_0> .
+
+<uuid/ec0744e4-99df-40cd-b45f-4504493b0ae0> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/language> .
+
+<uuid/ec3be1eb-8bfe-4532-91a7-1c3c5b0ae2d5> a rr:ObjectMap ;
+    rr:joinCondition <uuid/507501f6-e605-4da0-9f20-228f6045dc2d> ;
+    rr:parentTriplesMap <map_shape_points_0> .
+
+<uuid/eca0b814-7139-4a07-9b49-3460c0db9812> a rr:PredicateMap ;
+    rr:constant <http://purl.org/dc/terms/date> .
+
+<uuid/ed2701d0-b84d-46e5-9d41-6ab6fe600bd6> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#wheelchairAccessible> .
+
+<uuid/ed3879d7-b3d4-48d5-a48b-2d1f0a77cc29> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/3b5b1d79-d907-4631-80b0-64071932198c> ;
+    rr:predicateMap <uuid/faaa941c-f680-4975-ae2e-7bcee281da97> .
+
+<uuid/edc9a99e-2aa5-4901-8b3d-f99580d2654c> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Service" ;
+    rr:termType rr:IRI .
+
+<uuid/ede87934-6e47-4ddb-bbda-9d1eafb8bfe4> a rr:ObjectMap ;
+    rml:reference "shape_pt_lon" ;
+    rr:datatype xsd:double ;
+    rr:termType rr:Literal .
+
+<uuid/f07a2013-a183-433b-ad89-74ec586fd799> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#locationType> .
+
+<uuid/f1b001e5-e573-404b-8c15-bf1aae4ea83f> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#ShapePoint" ;
+    rr:termType rr:IRI .
+
+<uuid/f2588f74-4b90-4ff2-97be-eb3513b4d47f> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/38f221a1-0f8e-4329-bf19-48626b334f5b> ;
+    rr:predicateMap <uuid/04222dd4-8813-411d-ba62-66bb70888158> .
+
+<uuid/f3092f48-5cf1-4c84-b54b-c5ab70c3589c> a rr:PredicateMap ;
+    rr:constant <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+
+<uuid/f3ed9a60-88e4-45c9-b024-520b3114c807> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#headsign> .
+
+<uuid/f462ce98-0d10-4b8a-8ab1-d5b96cf9d684> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/79708c1d-6679-4960-9521-8c66d38dc603> ;
+    rr:predicateMap <uuid/9a91710e-a741-4543-9b1a-e039fe503b7b> .
+
+<uuid/f5eceabe-452e-4c62-b9be-6009c6e682e7> rr:child "service_id" ;
+    rr:parent "service_id" .
+
+<uuid/f6d0a73b-6d98-4c39-8ac1-b94010456b94> a rr:ObjectMap ;
+    rml:reference "feed_start_date" ;
+    rr:datatype xsd:date ;
+    rr:termType rr:Literal .
+
+<uuid/f86ed552-c895-49a2-bbf0-f2cce2d51e0e> a rr:ObjectMap ;
+    rml:reference "route_text_color" ;
+    rr:termType rr:Literal .
+
+<uuid/f8c3d9fe-c450-4e48-a6ed-455850c1bb75> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/a0a4e9fc-3a13-4566-b894-327382ecd277> ;
+    rr:predicateMap <uuid/5c267362-ec3f-4f3a-a84b-7ff206b03aca> .
+
+<uuid/f92dfb5f-34b0-4310-99d6-bad04c046c43> a rr:ObjectMap ;
+    rr:constant "http://vocab.gtfs.org/terms#Feed" ;
+    rr:termType rr:IRI .
+
+<uuid/f965e7b7-017e-4549-a435-32f5f7db79f8> a rr:ObjectMap ;
+    rml:reference "trip_short_name" ;
+    rr:termType rr:Literal .
+
+<uuid/fa925587-1f2e-492d-a1ae-92c066058248> rr:child "agency_id" ;
+    rr:parent "agency_id" .
+
+<uuid/faa1182b-3720-4515-b633-a459019531b9> rr:child "parent_station" ;
+    rr:parent "stop_id" .
+
+<uuid/faaa941c-f680-4975-ae2e-7bcee281da97> a rr:PredicateMap ;
+    rr:constant rdf:type .
+
+<uuid/fab4cd10-6f57-4b15-9228-24d58ff31e4b> a rr:PredicateMap ;
+    rr:constant <http://schema.org/startDate> .
+
+<uuid/fadee306-3e2b-4943-b6ec-70306d3cff8c> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#saturday> .
+
+<uuid/faee1901-91ce-4939-b239-f4db7ede2ec6> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/da4ac963-2a6c-4681-93f6-74fa7bb7fb56> ;
+    rr:predicateMap <uuid/f07a2013-a183-433b-ad89-74ec586fd799> .
+
+<uuid/fb317007-32a3-4d15-bae0-c1f792a3499a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/46dd4f6d-d73c-4085-a826-9b2eae6e7b79> ;
+    rr:predicateMap <uuid/02655195-0a99-42f8-8df3-3a9d1fbd2cb4> .
+
+<uuid/fba27f0d-463b-4d1b-a021-1d2d7dfcda27> a rr:ObjectMap ;
+    rml:reference "feed_version" ;
+    rr:termType rr:Literal .
+
+<uuid/fd406cba-545d-416b-a49a-82556ed3961d> a rr:ObjectMap ;
+    rml:reference "exception_type" ;
+    rr:datatype xsd:integer ;
+    rr:termType rr:Literal .
+
+<uuid/fe6d3160-5ffb-4206-bb46-44976d5cdf6e> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/cbb76650-2533-46f7-b2de-bf3566b9b4ca> ;
+    rr:predicateMap <uuid/bfe0d85f-0121-429b-8e4f-db0d2939108a> .
+
+<uuid/fee3f058-791e-4019-a586-005469f61912> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/17362d6f-c17e-4eb6-8ac9-f65df6b3a644> ;
+    rr:predicateMap <uuid/47757eae-5baa-4260-a27c-39fef0f447c5> .
+
+<uuid/ff4bfa6c-a711-40dc-8eb4-d755d9cb192a> a rr:PredicateObjectMap ;
+    rr:objectMap <uuid/b489ceb4-e79e-42f0-8d42-45a4a4bf2416> ;
+    rr:predicateMap <uuid/8e2b808c-4d27-42ba-be2b-6bdcc5ad8418> .
+
+<uuid/ff929403-4f18-47a0-922f-8fb934098fa0> a rr:PredicateMap ;
+    rr:constant <http://vocab.gtfs.org/terms#timeZone> .
+
+<map_stops_0> a rr:TriplesMap ;
+    rdfs:label "stops" ;
+    rr:logicalTable [ a rr:LogicalTable ;
+            rr:sqlVersion rr:SQL2008 ;
+            rr:tableName "stops" ] ;
+    rr:predicateObjectMap <uuid/1ca0cd65-fd3e-4e10-9e99-7afdc38f100e>,
+        <uuid/26c91de1-cb60-4142-892d-e10379718490>,
+        <uuid/2c3b97a9-d58c-4467-a42c-727d3e39c555>,
+        <uuid/9e01309f-0be6-46ab-9bc7-9b28949e60ca>,
+        <uuid/a317021d-8ed3-46b5-ab6b-d00e3a67668f>,
+        <uuid/af416ae1-28bf-4558-858d-bd427e5dc3a6>,
+        <uuid/af96ce54-0492-4233-88dd-14aac3f36bec>,
+        <uuid/c5d5e82e-3f35-4741-89bf-671b076d59b6>,
+        <uuid/c85892c2-75a8-4071-9e78-f1b9703c4818>,
+        <uuid/daf91cfe-ad83-4792-aaf9-ea00582f5429>,
+        <uuid/f462ce98-0d10-4b8a-8ab1-d5b96cf9d684>,
+        <uuid/f8c3d9fe-c450-4e48-a6ed-455850c1bb75>,
+        <uuid/faee1901-91ce-4939-b239-f4db7ede2ec6> ;
+    rr:subjectMap <uuid/76dd9596-0fd6-4ed2-81b5-9862e19624bb> .
+
+<map_trips_0> a rr:TriplesMap ;
+    rdfs:label "trips" ;
+    rr:logicalTable [ a rr:LogicalTable ;
+            rr:sqlVersion rr:SQL2008 ;
+            rr:tableName "trips" ] ;
+    rr:predicateObjectMap <uuid/04bcdb09-223d-400f-810a-d08f0c08bc99>,
+        <uuid/07755369-41b6-44c3-8cef-922bacb8c1a5>,
+        <uuid/34672d09-6acf-4068-8472-f2856e48b122>,
+        <uuid/94461922-6195-403d-817c-cabc162be2ab>,
+        <uuid/b5fe3225-7c9d-4fe2-9097-280b93df5a74>,
+        <uuid/b94f674f-9320-4292-87e6-fabe75d9e0c4>,
+        <uuid/c9dbd17a-e404-4d71-bac3-fd12911974da>,
+        <uuid/d9575a8f-8fc4-4694-89e8-6ae347c1bdfd>,
+        <uuid/fee3f058-791e-4019-a586-005469f61912> ;
+    rr:subjectMap <uuid/22c99cf0-3b2b-4976-8629-5eb226e014b9> .
+

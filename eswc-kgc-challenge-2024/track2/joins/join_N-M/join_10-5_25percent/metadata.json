@@ -1,0 +1,18 @@
+{
+    "@id": "http://example.com/cases/FlexRML/join_10-5_25percent",
+    "name": "FlexRML: CSV: join 10-5 25percent",
+    "description": "Transform CSV into N-Quads with FlexRML",
+    "steps": [
+        {
+            "@id": "http://example.com/cases/FlexRML/join_10-5_25percent#step1",
+            "name": "Transform CSV into RDF",
+            "resource": "FlexRML",
+            "command": "execute_mapping",
+            "parameters": {
+                "mapping_file": "mapping.flex.ttl",
+                "output_file": "out.nt"
+            }
+        }
+    ]
+}
+

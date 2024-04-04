@@ -1,0 +1,18 @@
+{
+    "@id": "http://example.com/cases/FlexRML/10M_rows_20_columns",
+    "name": "FlexRML: CSV: 10M rows 20 columns",
+    "description": "Transform CSV into N-Quads with FlexRML",
+    "steps": [
+        {
+            "@id": "http://example.com/cases/FlexRML/10M_rows_20_columns#step1",
+            "name": "Transform CSV into RDF",
+            "resource": "FlexRML",
+            "command": "execute_mapping",
+            "parameters": {
+                "mapping_file": "mapping.flex.ttl",
+                "output_file": "out.nt"
+            }
+        }
+    ]
+}
+
