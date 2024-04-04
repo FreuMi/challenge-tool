@@ -11,9 +11,12 @@ rsync -avh --progress "$SOURCE_DIR" "$DEST_DIR"
 echo "Merge completed."
 
 # Remove GTFS folders with heterogeneity
-rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_files"
-rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_mixed"
-rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_nested"
-rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_tabular"
+rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_files/"
+rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_mixed/"
+rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_nested/"
+rm -r "./downloads/track2/gtfs-madrid-bench/heterogeneity_tabular/"
 
-echo "Folders deleted."
+# Remove Track1
+rm -r "./downloads/track1/"
+
+echo "Directories deleted."
