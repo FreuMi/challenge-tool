@@ -133,7 +133,7 @@
     rdfs:label "agency" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/AGENCY.csv" ] ;        
+        rml:source "/data/shared/AGENCY.csv" ] ;
     rr:predicateObjectMap <uuid/35ecc7eb-9e73-46ca-adf6-5148b6663812>,
         <uuid/6032a883-a9bd-4931-89d0-7f6803c42880>,
         <uuid/7aa85a0a-6d11-4824-9639-5e97f0faec8a>,
@@ -147,7 +147,7 @@
     rdfs:label "calendar_date_rules" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;   
+        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;
     rr:predicateObjectMap <uuid/19d00c58-0457-4152-ba8b-ed11180964c2>,
         <uuid/2dfa4b93-57e1-4758-94d4-99bcbcf69bc6>,
         <uuid/cd3dd617-24c2-4890-a71c-455d1b728798> ;
@@ -157,7 +157,7 @@
     rdfs:label "calendar_rules" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/CALENDAR.csv" ] ;   
+        rml:source "/data/shared/CALENDAR.csv" ] ;
     rr:predicateObjectMap <uuid/022bc5d5-82f2-45e8-8bdd-76c4f8317898>,
         <uuid/1ad934f0-02d0-4d54-b9f3-4473d89b872e>,
         <uuid/426d5e79-9229-48ff-bc4f-b4a3722ace5b>,
@@ -174,7 +174,7 @@
     rdfs:label "routes" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/ROUTES.csv" ] ;   
+        rml:source "/data/shared/ROUTES.csv" ] ;
     rr:predicateObjectMap <uuid/2f3cae5a-e19c-4567-a047-1ea0806d8f04>,
         <uuid/3dde2f5f-f3b7-43eb-9335-ce6177b880d6>,
         <uuid/555ca36f-8756-4f84-b0ea-1743a9395746>,
@@ -190,7 +190,7 @@
     rdfs:label "services1" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/CALENDAR.csv" ] ;           
+        rml:source "/data/shared/CALENDAR.csv" ] ;
     rr:predicateObjectMap <uuid/49eeb7cf-54d6-4e11-ac56-72dffde37ec2>,
         <uuid/58f8e393-c1b0-4643-b626-278ddd3be784> ;
     rr:subjectMap <uuid/307581f3-8e66-4f31-a4e9-bbb812e88f2e> .
@@ -199,7 +199,7 @@
     rdfs:label "services2" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;   
+        rml:source "/data/shared/CALENDAR_DATES.csv" ] ;
     rr:predicateObjectMap <uuid/620749ab-6881-4b5c-a207-58a11d88c135>,
         <uuid/b971cd9e-ad63-4132-910f-981c16b29ec7> ;
     rr:subjectMap <uuid/ad4df308-ef3a-4ecb-87aa-44638dd01299> .
@@ -208,7 +208,7 @@
     rdfs:label "shape_points" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/SHAPES.csv" ] ;   
+        rml:source "/data/shared/SHAPES.csv" ] ;
     rr:predicateObjectMap <uuid/005e59a7-65f9-48a4-970a-f2f0a0748c68>,
         <uuid/154fe515-8e32-4e31-971b-e44bc195b8e2>,
         <uuid/6b010568-6397-4b8e-adbc-48b29a3f05bd>,
@@ -220,7 +220,7 @@
     rdfs:label "shapes" ;
     rml:logicalSource [ 
         rml:referenceFormulation ql:CSV ;
-        rml:source "/data/shared/SHAPES.csv" ] ; 
+        rml:source "/data/shared/SHAPES.csv" ] ;
     rr:predicateObjectMap <uuid/07ae1bdd-2e5f-4754-b50c-6f676152d66a>,
         <uuid/dbec6b26-a816-427e-b464-8348aa2ad62e> ;
     rr:subjectMap <uuid/869060fd-bea9-42cb-ba7d-d3db0bdf2bcb> .
@@ -1264,9 +1264,9 @@
 
 <map_stops_0> a rr:TriplesMap ;
     rdfs:label "stops" ;
-    rr:logicalTable [ a rr:LogicalTable ;
-            rr:sqlVersion rr:SQL2008 ;
-            rr:tableName "stops" ] ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/STOPS.csv" ] ;
     rr:predicateObjectMap <uuid/1ca0cd65-fd3e-4e10-9e99-7afdc38f100e>,
         <uuid/26c91de1-cb60-4142-892d-e10379718490>,
         <uuid/2c3b97a9-d58c-4467-a42c-727d3e39c555>,
@@ -1284,9 +1284,9 @@
 
 <map_trips_0> a rr:TriplesMap ;
     rdfs:label "trips" ;
-    rr:logicalTable [ a rr:LogicalTable ;
-            rr:sqlVersion rr:SQL2008 ;
-            rr:tableName "trips" ] ;
+    rml:logicalSource [ 
+        rml:referenceFormulation ql:CSV ;
+        rml:source "/data/shared/TRIPS.csv" ] ;
     rr:predicateObjectMap <uuid/04bcdb09-223d-400f-810a-d08f0c08bc99>,
         <uuid/07755369-41b6-44c3-8cef-922bacb8c1a5>,
         <uuid/34672d09-6acf-4068-8472-f2856e48b122>,
